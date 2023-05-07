@@ -71,4 +71,6 @@ int main() {
     // Step #6. �o��
     cout << Answer[62][0] << endl;
     return 0;
-}
+}//
+// Created by satos on 2023/05/07.
+//
