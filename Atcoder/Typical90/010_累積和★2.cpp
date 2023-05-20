@@ -31,4 +31,6 @@ int main() {
         cout << sum1 << " " << sum2 << endl;
     }
     return 0;
-}
+}//
+// Created by satos on 2023/05/20.
+//
