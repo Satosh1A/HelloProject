@@ -22,4 +22,6 @@ int main() {
     temp = gcd(A,B,C);
     cout << A/temp+B/temp+C/temp-3 << endl;
     return 0;
-}
+}//
+// Created by satos on 2023/05/21.
+//
