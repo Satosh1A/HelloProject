@@ -27,3 +27,6 @@ int main() {
     cout << max << endl;
     return 0;
 }
+//
+// Created by satos on 2023/06/04.
+//
