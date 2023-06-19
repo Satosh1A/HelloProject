@@ -39,4 +39,6 @@ int main() {
     }
     cout << "No" << endl;
     return 0;
-}
+}//
+// Created by satos on 2023/06/19.
+//
