@@ -12,31 +12,36 @@ typedef long long ll;
 
 using namespace std;
 
-long long N, A[1 << 19];
-long long B[1 << 19];
-
 int main() {
-    // Step #1. Input
-    cin >> N;
-    for (int i = 1; i <= N; i++) cin >> A[i];
-
-    // Step #2. Make Array B
-    for (int i = 1; i <= N; i++) B[i] = B[i - 1] + A[i];
-    for (int i = 1; i <= N; i++) B[i + N] = B[i + N - 1] + A[i];
-    if (B[N] % 10LL != 0LL) {
-        cout << "No" << endl;
-        return 0;
-    }
-
-    // Step #3. Get Answer
-    for (int i = 0; i <= N; i++) {
-        long long goal = B[i] + B[N] / 10LL;
-        int pos1 = lower_bound(B, B + 2 * N + 1, goal) - B;
-        if (B[pos1] == goal) {
-            cout << "Yes" << endl;
-            return 0;
-        }
-    }
-    cout << "No" << endl;
+    int H,W;
+    cin >> H >> W;
+    vector<vector<int>> A(H,vector<int>(W)), B(H,vector<int>(W));
+   for(int i=0;i<H;i++){
+       for(int j=0;j<W;j++){
+           cin >> A[i][j];
+       }
+   }
+   for(int i=0;i<H;i++){
+       for(int j=0;j<W;j++){
+           cin >> B[i][j];
+       }
+   }
+   ll ans=0;
+   for(int i=0;i<H-1;i++){
+       for(int j=0;j<W-1;j++){
+           int d = B[i][j]-A[i][j];
+           A[i][j]+=d;
+           A[i+1][j]+=d;
+           A[i][j+1]+=d;
+           A[i+1][j+1]+=d;
+           ans+=abs(d);
+       }
+   }
+   if(A==B){
+       cout << "Yes" << endl;
+       cout << ans << endl;
+   }else{
+       cout << "No" << endl;
+   }
     return 0;
 }
